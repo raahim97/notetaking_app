@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+
+<div class="container mt-5">
+    <form class="mx-auto" method="post">
+
+        {% if message %}
+        <div class="alert alert-info"> {{message}}</div>
+        {% endif %}
+
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <center><h3>Register</h3></center>
+                <br>
+                <label>First Name</label>
+                <input type="text" name="first_name" placeholder="Enter your first name" class="form-control">
+                <label>Last Name</label>
+                <input type="text" name="last_name" placeholder="Enter your last name" class="form-control">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Enter your username" class="form-control">
+                <label>Phone</label>
+                <input type="phone" name="phone" placeholder="Enter your phone" class="form-control">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Enter your email" class="form-control">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter your password" class="form-control">
+
+                <center>
+                    <button type="submit" class="btn btn-primary mt-4">Register</button>
+                </center>
+                <br>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

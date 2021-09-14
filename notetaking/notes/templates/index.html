@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+{% block content %}
+
+
+<!--Jinja syntax-->
+<div class="container">
+    <h1>Notes</h1>
+    <div class="row">
+
+        {% for note in notes %}
+            <div class="col-md-4 mt-5">
+                <p>{{note.note_title}}</p>
+                <p>{{note.student}}</p>
+                <p>{{note.subject}}</p>
+                <p>{{note.note_desc | truncatechars:255 }}</p>
+            </div>
+        {% endfor%}
+    </div>
+</div>
+
+{% endblock %}
